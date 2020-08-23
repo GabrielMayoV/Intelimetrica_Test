@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .router import router
+from api import views
 
 urlpatterns = [
+    #path('restaurants/statistics?latitude=<str:latitud>&longitude=<str:longitude>&radius=<str:radius>',views.statistics,name='statistics'),
+    path('restaurants/statistics/<str:latitud>/<str:longitude>/<str:radius>/$',views.statistics,name='statistics'),
     path('admin/', admin.site.urls),
     path('api/',include(router.urls))
 ]
