@@ -75,13 +75,27 @@ WSGI_APPLICATION = 'Melp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
+#SPATIALITE_LIBRARY_PATH='/usr/local/lib/mod_spatialite.dylib'
+
+# DATABASES = {
+#     'default': {
+#         #'ENGINE': 'django.db.backends.sqlite3',
+#         'ENGINE': 'django.contrib.gis.db.backends.spatialite',
+#         #'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': BASE_DIR / 'db.spatialite3',
+#     }
+# }
+
+DATABASES ={
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.contrib.gis.db.backends.postgis',
+            'NAME': 'melp',
+            'USER':'postgres',
+            'HOST':'localhost',
+            'PASSWORD':'postgres',
+            'PORT':'5432'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
