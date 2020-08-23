@@ -7,8 +7,22 @@ This repo contains the Intelimetrica test developed by Gabriel Mayo. It consists
 The API is developed with Python, Django and Django REST Framework, using a PostgreSQL database and is hosted in Heroku.
 
 ## API endpoints
-The base path of the API is `https://intelimetrica-test-gmv.herokuapp.com/`
-
+The base path of the API is `https://intelimetrica-test-gmv.herokuapp.com/` and the overall structure of the jsons to be handled is the following:
+```
+{
+    "id": "",
+    "rating": null,
+    "name": "",
+    "site": "",
+    "email": "",
+    "phone": "",
+    "street": "",
+    "city": "",
+    "state": "",
+    "lat": null,
+    "lng": null
+}
+```
 ### /api/restaurants/
 - GET: Returns a json of the restaurants registered in the database.
 - POST: Inserts a new restaurant, data is passed through the request body.
@@ -22,7 +36,15 @@ Functionality depends on the request method:
 
 
 ### /restaurants/statistics/[latitud]/[longitud]/[radius]/$
-Delivers statistical data (number of restaurants, average rating and standard deviation rating) of the restaurants contained within the circle passed in the parameters
+Delivers statistical data (number of restaurants, average rating and standard deviation rating) of the restaurants contained within the circle passed in the parameters, returns de following json structure:
+
+```
+{
+     "count": "", 
+     "avg": "", 
+     "std": ""
+}
+```
 
 ### Conclusions
 I certainly had much fun doing this test, I hope the team likes it!
