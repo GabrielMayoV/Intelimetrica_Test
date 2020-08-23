@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '4)da@2dwy@f!qf_zk%e!$sfl6*g=h_l1mnv3rheao55dwisn0$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','intelimetrica-test-gmv.herokuapp.com']
 
 
 # Application definition
